@@ -51,8 +51,8 @@ const Layout = () => {
       console.log(error || "Products not found");
     }
   };
-  useEffect(async () => {
-    await getUser();
+  useEffect(() => {
+    getUser();
     setloading(false);
   }, [isLogined]);
 
