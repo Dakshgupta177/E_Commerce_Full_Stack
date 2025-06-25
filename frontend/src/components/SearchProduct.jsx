@@ -18,23 +18,13 @@ const SearchProduct = () => {
     try {
       const response = await axios.post(
         "https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/addtocart",
-<<<<<<< HEAD
         { productId: id }, {
         headers: {
           "Content-Type": "application/json",
         },
         withCredentials: true,
-      }
-=======
-        { productId: id },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
->>>>>>> b9bb27c7e524d4751c2691aa9c260cf92e990d59
-      );
+      });
+      
       dispatch(increament());
     } catch (error) {
       console.log(error);
