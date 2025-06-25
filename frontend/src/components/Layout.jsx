@@ -19,7 +19,7 @@ const Layout = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include",
+        withCredentials: true,
       });
       console.log(response);
       
