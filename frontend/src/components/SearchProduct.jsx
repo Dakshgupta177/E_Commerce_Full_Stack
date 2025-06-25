@@ -23,7 +23,7 @@ const SearchProduct = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          credentials: "include",
+          withCredentials: true,
         }
       );
       dispatch(increament());
