@@ -28,8 +28,6 @@ const Layout = () => {
       }, 2000);
       throw new Error(error.response.data.message);
     }
-  };
-  const getAllProducts = async () => {
     try {
       const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/product/getallproducts", {
         headers: {
@@ -45,9 +43,8 @@ const Layout = () => {
       console.log(error || "Products not found");
     }
   };
-  useEffect(async() => {
-    await getUser();
-    getAllProducts();
+  useEffect(() => {
+    getUser();
     setloading(false);
   }, [isLogined]);
 
