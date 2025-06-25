@@ -6,7 +6,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: `${process.env.VITE_URL}`,
   credentials: true,
 };
 
@@ -19,10 +19,10 @@ app.use(cookieParser());
 // import routes
 import userRoute from "./routes/user.route.js";
 import productRoute from "./routes/product.route.js";
-import cartRoute from "./routes/cart.route.js"
+import cartRoute from "./routes/cart.route.js";
 import stripeRoute from "./routes/stripe.route.js";
 app.use("/api/product", productRoute);
 app.use("/api/user", userRoute);
-app.use("/api/cart",cartRoute);
-app.use("/api/stripe",stripeRoute);
+app.use("/api/cart", cartRoute);
+app.use("/api/stripe", stripeRoute);
 export { app };

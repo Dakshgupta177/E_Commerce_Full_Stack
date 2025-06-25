@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "nodemon node backend/index.js"
+    "start": "nodemon node index.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
