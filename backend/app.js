@@ -6,7 +6,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: `${process.env.VITE_URL}`,
+  origin: `*`,
   credentials: true,
 };
 
