@@ -80,7 +80,8 @@ export const loginUser = async (req, res) => {
   const options = {
     httpOnly: true,
     secure: true,
-    sameSite: "None", 
+    sameSite: "None",
+    domain:"e-commerce-full-stack-backend-7by3.onrender.com",
   };
   res
     .status(200)
@@ -112,6 +113,7 @@ export const logoutUser = async (req, res) => {
     httpOnly: true,
     secure: true,
     sameSite: "None", 
+    domain:"e-commerce-full-stack-backend-7by3.onrender.com",
   };
   return res
     .status(200)
@@ -138,6 +140,7 @@ export const refreshAccessToken = async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: "None", 
+      domain:"e-commerce-full-stack-backend-7by3.onrender.com",
     };
 
     res
@@ -212,6 +215,7 @@ export const deleteUser = async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: "None", 
+      domain:"e-commerce-full-stack-backend-7by3.onrender.com",
     };
     await user.deleteOne({ _id: req.user._id });
     return res
