@@ -80,6 +80,7 @@ export const loginUser = async (req, res) => {
   const options = {
     httpOnly: true,
     secure: true,
+    sameSite: "None", 
   };
   res
     .status(200)
@@ -110,6 +111,7 @@ export const logoutUser = async (req, res) => {
   const options = {
     httpOnly: true,
     secure: true,
+    sameSite: "None", 
   };
   return res
     .status(200)
@@ -135,6 +137,7 @@ export const refreshAccessToken = async (req, res) => {
     const options = {
       httpOnly: true,
       secure: true,
+      sameSite: "None", 
     };
 
     res
@@ -208,6 +211,7 @@ export const deleteUser = async (req, res) => {
     const options = {
       httpOnly: true,
       secure: true,
+      sameSite: "None", 
     };
     await user.deleteOne({ _id: req.user._id });
     return res
