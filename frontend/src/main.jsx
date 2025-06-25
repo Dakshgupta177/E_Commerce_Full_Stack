@@ -12,7 +12,7 @@ import Profile from "./components/User/Profile.jsx";
 import { AddProduct } from "./components/AddProduct.jsx";
 import Cart from "./components/Cart.jsx";
 import SearchProduct from "./components/SearchProduct.jsx";
-import ProductCard from "./components/productCard.jsx";
+import ProductCard from "./components/ProductCard.jsx";
 import Success from "./components/Success.jsx";
 import Failed from "./components/Failed.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";

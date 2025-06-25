@@ -6,10 +6,10 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: `${process.env.VITE_URL}`,
+  origin: "https://e-commerce-full-stack-frontend-4tzb.onrender.com",
   credentials: true,
 };
-
+app.options("*", cors(corsOptions));
 app.use(cors(corsOptions));
 app.use(express.json({ limit: "1mb" })); // increase limit as necessary
 app.use(express.urlencoded({ extended: true, limit: "1mb" }));
