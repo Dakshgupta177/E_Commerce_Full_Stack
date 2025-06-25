@@ -27,7 +27,7 @@ function App() {
     setloading(true);
     try {
       const response = await axios.post(
-        "/api/cart/addtocart",
+        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/addtocart",
         { productId: id },
         {
           headers: {

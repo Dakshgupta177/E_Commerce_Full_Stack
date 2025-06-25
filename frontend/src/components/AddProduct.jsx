@@ -52,7 +52,7 @@ export const AddProduct = () => {
 
     try {
       const response = await axios.post(
-        "/api/product/createproduct",
+        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/product/createproduct",
         formData,
         {
           headers: {

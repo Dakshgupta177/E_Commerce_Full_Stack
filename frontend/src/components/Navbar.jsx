@@ -17,7 +17,7 @@ const Navbar = () => {
   const getCartItems = async () => {
     setloading(true);
     try {
-      const response = await axios.get("/api/cart/getcartdetails");
+      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails");
       const totalQuantity = response?.data?.Data?.totalQuantity || 0;
       dispatch(totalAmount(totalQuantity));
     } catch (error) {
@@ -29,7 +29,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     setloading(true);
     try {
-      await axios.post("/api/user/logout");
+      await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/logout");
       dispatch(logout());
       setshowdropdown(false);
     } finally {

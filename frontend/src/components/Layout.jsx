@@ -16,8 +16,8 @@ const Layout = () => {
   const getUser = async () => {
     try {
       setloading(true);
-      const response = await axios.get("/api/user/userprofile");
-      await axios.post("/api/user/refresh/token");
+      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/userprofile");
+      await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/refresh/token");
       dispatch(login({ userData: response.data.data }));
       setloading(false);
     } catch (error) {
@@ -31,12 +31,14 @@ const Layout = () => {
   };
   const getAllProducts = async () => {
     try {
-      const response = await axios.get("/api/product/getallproducts", {
+      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/product/getallproducts", {
         headers: {
           "Content-Type": "application/json",
         },
         credentials: "include",
       });
+      console.log(response);
+      
       const Products = response.data.products;
       dispatch(getProducts({ products: Products }));
     } catch (error) {

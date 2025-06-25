@@ -34,7 +34,7 @@ const Login = () => {
     }, 1000);
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/user/login",
+        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/login",
         data,
         {
           header: {

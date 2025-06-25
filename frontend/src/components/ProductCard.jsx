@@ -30,7 +30,7 @@ const productCard = () => {
   const onSubmit = async (data) => {
     setloading(true);
     try {
-      const response = await axios.post("/api/user/updateaddress", data, {
+      const response = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/updateaddress", data, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -57,7 +57,7 @@ const productCard = () => {
         "pk_test_51RbeO8Q3LuoRWPJrOKfyCRgDIU3qnlXvtAv4PAti59rtupo2kJ1YD7r9dgvo9Zk2bnxI42CW8f7oOMxM4L1BEoS7000cnGswbe"
       );
       const response = await axios.post(
-        "/api/stripe/checkout",
+        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/stripe/checkout",
         {
           product: prod,
         },
@@ -83,7 +83,7 @@ const productCard = () => {
     setloading(true);
     try {
       const response = await axios.post(
-        "/api/cart/addtocart",
+        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/addtocart",
         { productId: prod[0]._id },
         {
           headers: {
@@ -109,7 +109,7 @@ const productCard = () => {
   const getTheProduct = async () => {
     setloading(true);
     try {
-      const Product = await axios.post("/api/product/getaproduct", {
+      const Product = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/product/getaproduct", {
         Product_title: params.title,
       });
       setprod([Product.data.product]);

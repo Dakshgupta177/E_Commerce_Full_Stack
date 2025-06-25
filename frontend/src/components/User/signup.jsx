@@ -28,7 +28,7 @@ const Signup = () => {
     setsubmit(true);
     try {
       const dat = await axios.post(
-        "/api/user/signup",
+        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/signup",
         data,
         {
           headers: {

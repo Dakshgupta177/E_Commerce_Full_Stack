@@ -50,7 +50,7 @@ const Cart = () => {
   const onSubmit = async (data) => {
     setloading(true);
     try {
-      const response = await axios.post("/api/user/updateaddress", data, {
+      const response = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/updateaddress", data, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -74,7 +74,7 @@ const Cart = () => {
         "pk_test_51RbeO8Q3LuoRWPJrOKfyCRgDIU3qnlXvtAv4PAti59rtupo2kJ1YD7r9dgvo9Zk2bnxI42CW8f7oOMxM4L1BEoS7000cnGswbe"
       );
       const response = await axios.post(
-        "/api/stripe/checkout",
+        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/stripe/checkout",
         {
           product: Items,
         },
@@ -99,7 +99,7 @@ const Cart = () => {
   const getCartItems = async () => {
     setloading(true);
     try {
-      const response = await axios.get("/api/cart/getcartdetails");
+      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails");
       setItems(response?.data?.Data?.Products || 0);
     } catch (error) {
       console.log(error);
@@ -110,8 +110,8 @@ const Cart = () => {
   const handleIncreament = async (id) => {
     setloading(true);
     try {
-      await axios.post("/api/cart/addtocart", { productId: id });
-      const response = await axios.get("/api/cart/getcartdetails");
+      await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/addtocart", { productId: id });
+      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails");
       setItems(response?.data?.Data?.Products);
       dispatch(increament());
     } catch (error) {
@@ -123,8 +123,8 @@ const Cart = () => {
   const handleDecreament = async (id) => {
     setloading(true);
     try {
-      await axios.post("/api/cart/minuscart", { productId: id });
-      const response = await axios.get("/api/cart/getcartdetails");
+      await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/minuscart", { productId: id });
+      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails");
       setItems(response?.data?.Data?.Products || []);
       dispatch(decreament());
     } catch (error) {

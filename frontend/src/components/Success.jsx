@@ -10,7 +10,7 @@ const Success = () => {
   const getPaymentDetails = async () => {
     setloading(true);
     try {
-      const response = await axios.post("/api/stripe/verifypayment", {
+      const response = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/stripe/verifypayment", {
         sessionId,
       });
       console.log(response.data);
