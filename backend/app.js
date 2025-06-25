@@ -6,7 +6,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: `*`,
+  origin: "https://e-commerce-full-stack-frontend-4tzb.onrender.com",
   credentials: true,
 };
 
