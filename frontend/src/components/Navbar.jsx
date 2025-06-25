@@ -17,7 +17,12 @@ const Navbar = () => {
   const getCartItems = async () => {
     setloading(true);
     try {
-      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails");
+      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
       const totalQuantity = response?.data?.Data?.totalQuantity || 0;
       dispatch(totalAmount(totalQuantity));
     } catch (error) {
