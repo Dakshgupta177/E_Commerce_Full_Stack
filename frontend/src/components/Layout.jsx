@@ -30,35 +30,20 @@ const Layout = () => {
     }
     try {
       setloading(true);
-<<<<<<< HEAD
-      const response = await axios.get(
-        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/userprofile", {
-=======
       const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/userprofile", {
->>>>>>> b9bb27c7e524d4751c2691aa9c260cf92e990d59
         headers: {
           "Content-Type": "application/json",
         },
         withCredentials: true,
-<<<<<<< HEAD
       }
       );
-      await axios.post(
-        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/refresh/token", {
-=======
-      });
       await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/refresh/token", {
->>>>>>> b9bb27c7e524d4751c2691aa9c260cf92e990d59
         headers: {
           "Content-Type": "application/json",
         },
         withCredentials: true,
-<<<<<<< HEAD
-      }
-      );
-=======
       });
->>>>>>> b9bb27c7e524d4751c2691aa9c260cf92e990d59
+
       dispatch(login({ userData: response.data.data }));
       setloading(false);
     } catch (error) {
@@ -69,26 +54,6 @@ const Layout = () => {
       }, 2000);
       throw new Error(error.response.data.message);
     }
-<<<<<<< HEAD
-
-    try {
-      const response = await axios.get(
-        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/product/getallproducts", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-      }
-      );
-      console.log(response);
-
-      const Products = response.data.products;
-      dispatch(getProducts({ products: Products }));
-    } catch (error) {
-      console.log(error || "Products not found");
-    }
-=======
->>>>>>> b9bb27c7e524d4751c2691aa9c260cf92e990d59
   };
   useEffect(() => {
     getUser();
