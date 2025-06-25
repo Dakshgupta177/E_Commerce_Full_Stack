@@ -80,6 +80,11 @@ export const loginUser = async (req, res) => {
   const options = {
     httpOnly: true,
     secure: true,
+<<<<<<< HEAD
+=======
+    sameSite: "None",
+    domain:"e-commerce-full-stack-backend-7by3.onrender.com",
+>>>>>>> b9bb27c7e524d4751c2691aa9c260cf92e990d59
   };
   res
     .status(200)
@@ -110,6 +115,11 @@ export const logoutUser = async (req, res) => {
   const options = {
     httpOnly: true,
     secure: true,
+<<<<<<< HEAD
+=======
+    sameSite: "None", 
+    domain:"e-commerce-full-stack-backend-7by3.onrender.com",
+>>>>>>> b9bb27c7e524d4751c2691aa9c260cf92e990d59
   };
   return res
     .status(200)
@@ -135,6 +145,11 @@ export const refreshAccessToken = async (req, res) => {
     const options = {
       httpOnly: true,
       secure: true,
+<<<<<<< HEAD
+=======
+      sameSite: "None", 
+      domain:"e-commerce-full-stack-backend-7by3.onrender.com",
+>>>>>>> b9bb27c7e524d4751c2691aa9c260cf92e990d59
     };
 
     res
@@ -208,6 +223,11 @@ export const deleteUser = async (req, res) => {
     const options = {
       httpOnly: true,
       secure: true,
+<<<<<<< HEAD
+=======
+      sameSite: "None", 
+      domain:"e-commerce-full-stack-backend-7by3.onrender.com",
+>>>>>>> b9bb27c7e524d4751c2691aa9c260cf92e990d59
     };
     await user.deleteOne({ _id: req.user._id });
     return res
