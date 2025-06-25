@@ -34,6 +34,7 @@ const productCard = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        withCredentials: true,
       });
       dispatch(updateData({ userData: response.data.user }));
       setError(response.data.message);
@@ -60,13 +61,12 @@ const productCard = () => {
         "https://e-commerce-full-stack-backend-7by3.onrender.com/api/stripe/checkout",
         {
           product: prod,
+        }, {
+        headers: {
+          "Content-Type": "application/json",
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-        }
+        withCredentials: true,
+      }
       );
       const sessionId = response.data.id;
       const result = await stripe.redirectToCheckout({ sessionId });
@@ -84,13 +84,12 @@ const productCard = () => {
     try {
       const response = await axios.post(
         "https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/addtocart",
-        { productId: prod[0]._id },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-        }
+        { productId: prod[0]._id }, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
       );
       dispatch(increament());
     } catch (error) {
@@ -111,6 +110,11 @@ const productCard = () => {
     try {
       const Product = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/product/getaproduct", {
         Product_title: params.title,
+      }, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
       });
       setprod([Product.data.product]);
     } catch (error) {

@@ -58,7 +58,7 @@ export const AddProduct = () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-          credentials: "include",
+          withCredentials: true,
         }
       );
       seterror(response.data.message);

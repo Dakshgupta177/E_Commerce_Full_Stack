@@ -8,12 +8,17 @@ export const ChangeAvatar = () => {
     const file = document.getElementById("file").files[0];
     const formData = new FormData();
     formData.append("avatar", file);
-    const response = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/edituseravatar", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-      credentials: "include",
-    });
+    const response = await axios.post(
+      "https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/edituseravatar",
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        withCredentials: true,
+      }
+    );
+
     console.log(response);
     dispatch(login({ userData: response.data.data }));
     setloading(false);

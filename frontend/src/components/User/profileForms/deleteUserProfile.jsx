@@ -23,7 +23,7 @@ export const DeleteProfile = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include",
+        withCredentials: true,
       });
       dispatch(logout());
       seterror(response.data.message);

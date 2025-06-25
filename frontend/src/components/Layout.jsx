@@ -17,10 +17,20 @@ const Layout = () => {
     try {
       setloading(true);
       const response = await axios.get(
-        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/userprofile"
+        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/userprofile", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
       );
       await axios.post(
-        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/refresh/token"
+        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/refresh/token", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
       );
       dispatch(login({ userData: response.data.data }));
       setloading(false);
@@ -35,13 +45,12 @@ const Layout = () => {
 
     try {
       const response = await axios.get(
-        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/product/getallproducts",
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-        }
+        "https://e-commerce-full-stack-backend-7by3.onrender.com/api/product/getallproducts", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
       );
       console.log(response);
 

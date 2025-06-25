@@ -29,13 +29,12 @@ const Signup = () => {
     try {
       const dat = await axios.post(
         "https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/signup",
-        data,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include" 
+        data, {
+        headers: {
+          "Content-Type": "application/json",
         },
+        withCredentials: true,
+      }
       );
       seterror(dat.data.message);
       setisSignin(true);

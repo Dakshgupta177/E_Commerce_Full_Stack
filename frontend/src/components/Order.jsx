@@ -8,7 +8,12 @@ const Order = () => {
   const getOrderDetails = async () => {
     setloading(true);
     try {
-      const response = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/stripe/getpaymentdetails");
+      const response = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/stripe/getpaymentdetails", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
       console.log(response.data.Data);
 
       const filteredData = response.data.Data.filter(

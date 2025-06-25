@@ -12,6 +12,11 @@ const Success = () => {
     try {
       const response = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/stripe/verifypayment", {
         sessionId,
+      }, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
       });
       console.log(response.data);
     } catch (error) {

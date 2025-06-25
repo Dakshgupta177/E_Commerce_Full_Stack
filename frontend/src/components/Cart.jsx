@@ -54,6 +54,7 @@ const Cart = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        withCredentials: true,
       });
       dispatch(updateData({ userData: response.data.user }));
       setError(response.data.message);
@@ -77,13 +78,12 @@ const Cart = () => {
         "https://e-commerce-full-stack-backend-7by3.onrender.com/api/stripe/checkout",
         {
           product: Items,
+        }, {
+        headers: {
+          "Content-Type": "application/json",
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-        }
+        withCredentials: true,
+      }
       );
       const sessionId = response.data.id;
       const result = await stripe.redirectToCheckout({ sessionId });
@@ -99,7 +99,12 @@ const Cart = () => {
   const getCartItems = async () => {
     setloading(true);
     try {
-      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails");
+      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
       setItems(response?.data?.Data?.Products || 0);
     } catch (error) {
       console.log(error);
@@ -110,8 +115,18 @@ const Cart = () => {
   const handleIncreament = async (id) => {
     setloading(true);
     try {
-      await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/addtocart", { productId: id });
-      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails");
+      await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/addtocart", { productId: id }, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
+      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
       setItems(response?.data?.Data?.Products);
       dispatch(increament());
     } catch (error) {
@@ -123,8 +138,18 @@ const Cart = () => {
   const handleDecreament = async (id) => {
     setloading(true);
     try {
-      await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/minuscart", { productId: id });
-      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails");
+      await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/minuscart", { productId: id }, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
+      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
       setItems(response?.data?.Data?.Products || []);
       dispatch(decreament());
     } catch (error) {
