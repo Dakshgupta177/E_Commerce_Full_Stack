@@ -99,7 +99,12 @@ const Cart = () => {
   const getCartItems = async () => {
     setloading(true);
     try {
-      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails");
+      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
       setItems(response?.data?.Data?.Products || 0);
     } catch (error) {
       console.log(error);
