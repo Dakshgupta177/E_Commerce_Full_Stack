@@ -6,7 +6,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: "https://e-commerce-full-stack-frontend.vercel.app",
+  origin: "https://e-commerce-full-stack-frontend-eqr0bcs4g.vercel.app",
   credentials: true,
 };
 app.set("trust proxy", 1)
