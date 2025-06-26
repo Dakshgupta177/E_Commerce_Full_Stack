@@ -9,6 +9,7 @@ const corsOptions = {
   origin: "https://e-commerce-full-stack-frontend-4tzb.onrender.com",
   credentials: true,
 };
+app.set("trust proxy", 1)
 app.use(cors(corsOptions));
 app.use(express.json({ limit: "1mb" })); // increase limit as necessary
 app.use(express.urlencoded({ extended: true, limit: "1mb" }));
