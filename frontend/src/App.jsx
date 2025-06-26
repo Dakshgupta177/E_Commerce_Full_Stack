@@ -33,7 +33,7 @@ function App() {
           headers: {
             "Content-Type": "application/json",
           },
-          credentials: "include",
+          withCredentials: true,
         }
       );
       dispatch(increament());
