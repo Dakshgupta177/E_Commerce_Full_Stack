@@ -16,9 +16,6 @@ const Admin = () => {
   const handleSubmit = async (e) => {
     setLoading(true);
     const res = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/adminlogin", {
-        headers: {
-          "Content-Type": "application/json",
-        },
         withCredentials: true,
       });
     console.log(res.data.user);
