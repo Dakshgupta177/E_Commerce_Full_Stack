@@ -25,8 +25,8 @@ export const makeOnePayment = async (req, res) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: `${process.env.VITE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.VITE_URL}/cancel`,
+      success_url: `https://e-commerce-full-stack-frontend-gamma.vercel.app//success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `https://e-commerce-full-stack-frontend-gamma.vercel.app//cancel`,
     });
     console.log(session);
     await Payment.create({
