@@ -15,9 +15,6 @@ export const FormTwo = () => {
     setloading(true);
     try {
       const response = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/changepassword", data, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
         withCredentials: true,
       });
       console.log(response.data);
