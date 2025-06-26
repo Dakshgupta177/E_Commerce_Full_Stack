@@ -34,7 +34,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     setloading(true);
     try {
-      await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/logout", {
+      await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/logout",{}, {
         headers: {
           "Content-Type": "application/json",
         },
