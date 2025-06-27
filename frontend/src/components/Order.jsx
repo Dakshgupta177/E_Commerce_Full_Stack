@@ -165,7 +165,7 @@ const Order = () => {
                                   </span>
                                   <span
                                     className={`m-4 text-green-500 ${
-                                      now < shippedDate ? "hidden" : ""
+                                      now < deliveryDate ? "hidden" : ""
                                     }`}
                                   >
                                     Complete
