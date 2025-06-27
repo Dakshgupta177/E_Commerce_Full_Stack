@@ -55,9 +55,6 @@ export const AddProduct = () => {
         "https://e-commerce-full-stack-backend-7by3.onrender.com/api/product/createproduct",
         formData,
         {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
           withCredentials: true,
         }
       );
