@@ -139,7 +139,7 @@ export const AddProduct = () => {
             id: "price",
             type: "number",
             required: true,
-            rules: { required: true, valueAsNumber: true },
+            rules: { required: true, valueAsNumber: true ,min: 50 },
           },
           {
             label: "Category",
@@ -164,8 +164,10 @@ export const AddProduct = () => {
             {errors[id] && (
               <p className="text-sm text-red-500">
                 {id === "description"
-                  ? "This field is required. Description should be longer."
-                  : "This field is required"}
+                   ? "This field is required. Description should be longer."
+                   : id === "price"
+                   ? "Price should be at least 50"
+                   : "This field is required"}
               </p>
             )}
           </div>
