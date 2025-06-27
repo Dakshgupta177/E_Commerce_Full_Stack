@@ -164,6 +164,33 @@ const Navbar = () => {
                   >
                     Your Profile
                   </Link>
+                  <Link
+                    to="/orders"
+                    className="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabIndex="-1"
+                    id="user-menu-item-0"
+                  >
+                    Orders
+                  </Link>
+                  <Link
+                    to="/adminlogin"
+                    className="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabIndex="-1"
+                    id="user-menu-item-0"
+                  >
+                    Admin Login
+                  </Link>
+                  <Link
+                    to="/products/addproduct"
+                    className="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabIndex="-1"
+                    id="user-menu-item-0"
+                  >
+                    Add Product
+                  </Link>
                   <button
                     className="block px-4 py-2 text-sm text-gray-700 w-full text-left"
                     onClick={handleLogout}
