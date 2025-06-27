@@ -92,6 +92,7 @@ const Order = () => {
 
                         <div className="flex justify-between items-center">
                           {(() => {
+                            const now = new Date();
                             const date = new Date(item.updatedAt);
                             date.setDate(date.getDate());
                             const shippedDate = new Date(item.updatedAt);
@@ -139,14 +140,14 @@ const Order = () => {
                                   {dayNameShi}
                                   <span
                                     className={`m-4 text-red-500 ${
-                                      date > shippedDate ? "hidden" : ""
+                                      now > shippedDate ? "hidden" : ""
                                     }`}
                                   >
                                     Incomplete
                                   </span>
                                   <span
                                     className={`m-4 text-green-500 ${
-                                      date < shippedDate ? "hidden" : ""
+                                      now < shippedDate ? "hidden" : ""
                                     }`}
                                   >
                                     Complete
@@ -157,14 +158,14 @@ const Order = () => {
                                   {dayNameDel}
                                   <span
                                     className={`m-4 text-red-500 ${
-                                      date > deliveryDate ? "hidden" : ""
+                                      now > deliveryDate ? "hidden" : ""
                                     }`}
                                   >
                                     Incomplete
                                   </span>
                                   <span
                                     className={`m-4 text-green-500 ${
-                                      date < shippedDate ? "hidden" : ""
+                                      now < shippedDate ? "hidden" : ""
                                     }`}
                                   >
                                     Complete
