@@ -2,8 +2,10 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
+import { cronJob } from "./cron.js";
 dotenv.config();
 const app = express();
+cronJob();
 
 const corsOptions = {
   origin: "https://e-commerce-full-stack-frontend-gamma.vercel.app",
