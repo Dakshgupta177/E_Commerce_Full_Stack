@@ -9,7 +9,7 @@ export const ChangeAvatar = () => {
     const formData = new FormData();
     formData.append("avatar", file);
     const response = await axios.post(
-      "https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/edituseravatar",
+      "/api/user/edituseravatar",
       formData,
       {
         withCredentials: true,
