@@ -19,7 +19,7 @@ export const DeleteProfile = () => {
   const onSubmit = async (data) => {
     setloading(true);
     try {
-      const response = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/deleteuser", data, {
+      const response = await axios.post("/api/user/deleteuser", data, {
         headers: {
           "Content-Type": "application/json",
         },
