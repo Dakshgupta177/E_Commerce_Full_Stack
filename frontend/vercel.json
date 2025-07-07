@@ -3,6 +3,10 @@
   {
     "source": "/api/:path*",
     "destination": "https://e-commerce-full-stack-backend-7by3.onrender.com/api/:path*"
+  },
+  {
+    "source": "/(.*)",
+    "destination": "/index.html"
   }
 ]
 }
