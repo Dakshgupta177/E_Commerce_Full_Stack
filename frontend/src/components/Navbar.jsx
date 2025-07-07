@@ -17,7 +17,7 @@ const Navbar = () => {
   const getCartItems = async () => {
     setloading(true);
     try {
-      const response = await axios.get("https://e-commerce-full-stack-backend-7by3.onrender.com/api/cart/getcartdetails", {
+      const response = await axios.get("/api/cart/getcartdetails", {
         headers: {
           "Content-Type": "application/json",
         },
@@ -34,7 +34,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     setloading(true);
     try {
-      await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/logout",{}, {
+      await axios.post("/api/user/logout",{}, {
         headers: {
           "Content-Type": "application/json",
         },
