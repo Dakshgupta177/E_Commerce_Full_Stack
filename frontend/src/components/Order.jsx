@@ -175,7 +175,7 @@ const Order = () => {
                             );
                           })()}
                           <p className="text-xl text-green-600 mt-1 font-bold">
-                            {prod.quantity}
+                            {prod.quantity || 1}
                           </p>
                         </div>
                       </div>
