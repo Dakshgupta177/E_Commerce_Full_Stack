@@ -16,7 +16,7 @@ const Admin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const res = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/adminlogin",{}, {
+    const res = await axios.post("/api/user/adminlogin",{}, {
         withCredentials: true,
       });
     console.log(res.data.user);
