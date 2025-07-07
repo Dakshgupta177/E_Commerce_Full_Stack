@@ -18,7 +18,7 @@ export const FormOne = () => {
   const onSubmit = async (data) => {
     setloading(true);
     try {
-      const response = await axios.post("https://e-commerce-full-stack-backend-7by3.onrender.com/api/user/editUserProfile", data, {
+      const response = await axios.post("/api/user/editUserProfile", data, {
         headers: {
           "Content-Type": "application/json",
         },
