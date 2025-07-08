@@ -86,6 +86,7 @@ const Cart = () => {
       }
       );
       const sessionId = response.data.id;
+      setloading(false);
       const result = await stripe.redirectToCheckout({ sessionId });
       if (result.error) {
         console.log(result.error);
