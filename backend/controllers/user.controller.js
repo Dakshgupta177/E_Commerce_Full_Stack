@@ -29,7 +29,7 @@ export const signupUser = async (req, res) => {
 
   const user = await User.create({
     username: username.toLowerCase(),
-    email,
+    email: email.toLowerCase(),
     password: Password,
     fullName,
   });
@@ -47,15 +47,15 @@ export const signupUser = async (req, res) => {
 
 export const loginUser = async (req, res) => {
   const { emailOrUsername, password } = req.body;
-
+  
   if (!emailOrUsername || !password) {
     return res
       .status(400)
       .json({ message: "Please enter email or username atleast !!" });
   }
-
+  const emailOrUser = emailOrUsername.toLowerCase();
   const user = await User.findOne({
-    $or: [{ email: emailOrUsername }, { username: emailOrUsername }],
+    $or: [{ email: emailOrUser }, { username: emailOrUser }],
   });
   if (!user) {
     return res
