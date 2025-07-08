@@ -26,7 +26,7 @@ const Admin = () => {
       setReason("");
       setLoading(false);
       if (res) {
-        dispatch(updateData(res.data.user));
+        dispatch(updateData({userData:res.data.user}));
       }
     }, 6000);
   };
