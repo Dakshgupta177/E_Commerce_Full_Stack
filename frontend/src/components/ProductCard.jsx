@@ -49,11 +49,11 @@ const productCard = () => {
   };
 
   const makePayment = async () => {
-    setloading(true);
     if (!user.address) {
       return setShowAddressPopup(true);
     }
     try {
+      setloading(true);
       const stripe = await loadStripe(
         "pk_test_51RbeO8Q3LuoRWPJrOKfyCRgDIU3qnlXvtAv4PAti59rtupo2kJ1YD7r9dgvo9Zk2bnxI42CW8f7oOMxM4L1BEoS7000cnGswbe"
       );
