@@ -16,6 +16,7 @@ const Login = () => {
   }, [isLogined]);
 
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [submit, setsubmit] = useState(false);
   const [error, seterror] = useState("something went wrong");
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const Login = () => {
       setsubmit(true);
     }, 1000);
     try {
+      setLoading(true);
       const res = await axios.post(
         "/api/user/login",
         data,
@@ -45,7 +47,9 @@ const Login = () => {
       );
       dispatch(login({ userData: res.data.user }));
       seterror(res.data.message);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       console.log("Response", error.response.data);
       seterror(error.response.data.message);
       if (
@@ -61,6 +65,13 @@ const Login = () => {
 
   return submit ? (
     <div className="h-[90vh] flex items-center justify-center  dark:bg-zinc-950 ">
+      {loading && (
+        <img
+          src="https://i.gifer.com/ZKZg.gif"
+          className="size-12 fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-50"
+          alt="Loading..."
+        />
+      )}
       <div className="h-96 max-sm:h-60 w-[60vw] bg-neutral-800 flex justify-around items-center flex-col rounded-2xl text-white">
         <h4 className="font-bold text-4xl text-center max-sm:text-2xl">
           {error}
