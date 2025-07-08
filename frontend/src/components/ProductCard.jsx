@@ -260,7 +260,7 @@ const productCard = () => {
         </div>
       </div>
       <div
-        className={`fixed bottom-0 w-full p-10 dark:bg-black bg-opacity-50 flex items-center justify-center z-50 ${
+        className={`fixed bottom-0 w-full p-10 bg-black text-white bg-opacity-50 flex items-center justify-center z-50 ${
           showAddressPopup ? "" : "hidden"
         } `}
       >
