@@ -131,8 +131,8 @@ const SearchProduct = () => {
             })}
           </div>
         ) : (
-          <div className="w-screen h-screen">
-            <h1 className="relative left-1/3 top-1/3 text-5xl max-md:text-2xl">
+          <div className="flex justify-center items-center h-screen">
+            <h1 className="font-bold text-6xl max-sm:text-3xl">
               No Product Found
             </h1>
           </div>
