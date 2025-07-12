@@ -46,7 +46,7 @@ export const DeleteProfile = () => {
         />
       ) : null}
       <h2 className="font-bold text-3xl ">Delete Account</h2>
-      <p className="font-medium text-xl text-gray-100 text-center">
+      <p className="font-medium text-xl dark:text-gray-100 text-center">
         Once you delete your account, there is no going back. Please be certain.
       </p>
       <form
