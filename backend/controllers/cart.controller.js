@@ -8,7 +8,7 @@ export const addCart = async (req, res) => {
   const existedUser = await Cart.findOne({ user: req.user._id });
   if (existedUser) {
     try {
-      const productExist = await Cart.findOne({ "items.product": productId });
+      const productExist = existedUser.items.find((item)=>{ return item.product == productId });
       if (productExist) {
         await Cart.updateOne(
           { user: req.user._id, "items.product": productId },
