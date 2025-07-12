@@ -132,7 +132,7 @@ const SearchProduct = () => {
           </div>
         ) : (
           <div className="w-screen h-screen">
-            <h1 className="relative left-1/3 top-1/3 text-5xl text-white ">
+            <h1 className="relative left-1/3 top-1/3 text-5xl max-md:text-2xl">
               No Product Found
             </h1>
           </div>
