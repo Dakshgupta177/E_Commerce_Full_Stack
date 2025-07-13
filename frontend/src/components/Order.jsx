@@ -40,7 +40,7 @@ const Order = () => {
           alt="Loading..."
         />
       )}
-      <div className="text-2xl text-center pt-8">orders</div>
+      <div className="text-2xl text-center pt-8 bg-gray-100 dark:bg-zinc-950">orders</div>
       {orders.map((item) => {
         return item.productDetails.map((prod) => {
           return (
