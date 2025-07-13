@@ -185,7 +185,7 @@ const Cart = () => {
   }, [Items]);
 
   return Items.length > 0 ? (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center bg-gray-100 dark:bg-zinc-950">
       {loading && (
         <img
           src="https://i.gifer.com/ZKZg.gif"
